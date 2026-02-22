@@ -1,87 +1,177 @@
-export default function StudyPlannerWebsite(){
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-indigo-100 to-white text-gray-900">
-      {/* Header with simple logo */}
-      <header className="bg-indigo-700 text-white p-8 text-center shadow-lg">
-        <div className="flex flex-col items-center gap-3">
-          {/* Simple logo circle */}
-          <div className="w-20 h-20 rounded-full bg-white text-indigo-700 flex items-center justify-center text-3xl font-bold shadow-lg animate-bounce">
-            F
-          </div>
-          <h1 className="text-4xl font-bold">FocusFlow Study Planner</h1>
-          <p className="mt-1 text-lg opacity-95">Plan smart • Study calm • Pass exams</p>
-        </div>
-      </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FocusFlow Study Planner</title>
 
-      {/* Main */}
-      <main className="max-w-4xl mx-auto p-8 grid gap-8">
-        {/* About */}
-        <section className="bg-white rounded-2xl shadow p-6 transition hover:shadow-xl hover:-translate-y-1">
-          <h2 className="text-2xl font-semibold mb-2">What is FocusFlow?</h2>
-          <p>
-            FocusFlow is a simple study planner made for students who want better
-            grades and less stress. It helps organise homework, plan study time,
-            and remind you about tests in a calm and easy way.
-          </p>
-        </section>
-
-        {/* Screenshot mockups */}
-        <section className="bg-white rounded-2xl shadow p-6">
-          <h2 className="text-2xl font-semibold mb-4">App Preview</h2>
-
-          <div className="grid md:grid-cols-3 gap-4 text-center">
-            <div className="p-4 rounded-xl bg-indigo-50 shadow transition hover:scale-105">
-              <div className="h-40 bg-white rounded-lg flex items-center justify-center text-gray-400 text-sm border">
-                Daily Planner Screen
-              </div>
-              <p className="mt-2 text-sm">Plan your study time clearly</p>
-            </div>
-
-            <div className="p-4 rounded-xl bg-indigo-50 shadow transition hover:scale-105">
-              <div className="h-40 bg-white rounded-lg flex items-center justify-center text-gray-400 text-sm border">
-                Homework Tracker Screen
-              </div>
-              <p className="mt-2 text-sm">Track homework and deadlines</p>
-            </div>
-
-            <div className="p-4 rounded-xl bg-indigo-50 shadow transition hover:scale-105">
-              <div className="h-40 bg-white rounded-lg flex items-center justify-center text-gray-400 text-sm border">
-                Motivation Screen
-              </div>
-              <p className="mt-2 text-sm">Stay encouraged every day</p>
-            </div>
-          </div>
-        </section>
-
-        {/* Emotional appeal */}
-        <section className="bg-white rounded-2xl shadow p-6 transition hover:shadow-xl">
-          <h2 className="text-2xl font-semibold mb-2">No more last minute panic</h2>
-          <p>
-            Imagine walking into class feeling ready instead of worried.
-            Imagine knowing your work is finished.
-            FocusFlow helps you take small steps each day so success feels possible.
-          </p>
-        </section>
-
-        {/* CTA */}
-        <section className="bg-indigo-600 text-white rounded-2xl shadow p-8 text-center transition hover:scale-[1.02]">
-          <h2 className="text-2xl font-semibold mb-2">Start your smart study life today</h2>
-          <p className="mb-4">Join students choosing calm, organised studying.</p>
-          <button className="bg-white text-indigo-700 font-semibold px-6 py-3 rounded-xl shadow hover:scale-110 transition">
-            Get Started
-          </button>
-        </section>
-
-        {/* Credits */}
-        <section className="bg-white rounded-2xl shadow p-6">
-          <h2 className="text-xl font-semibold mb-2">Project Info</h2>
-          <p>Created by Zak Matthews for school project.</p>
-        </section>
-      </main>
-
-      <footer className="text-center p-6 text-sm text-gray-600">
-        © {new Date().getFullYear()} FocusFlow Study Planner
-      </footer>
-    </div>
-  )
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(#e0e7ff,#ffffff);
+  color:#222;
+  text-align:center;
 }
+
+header{
+  background:#4338ca;
+  color:white;
+  padding:40px 20px;
+}
+
+.logo{
+  width:80px;
+  height:80px;
+  background:white;
+  color:#4338ca;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:40px;
+  font-weight:bold;
+  margin:0 auto 15px;
+  animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+}
+
+section{
+  background:white;
+  margin:25px auto;
+  padding:25px;
+  max-width:700px;
+  border-radius:16px;
+  box-shadow:0 6px 16px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+section:hover{
+  transform:translateY(-5px);
+  box-shadow:0 12px 25px rgba(0,0,0,0.15);
+}
+
+.screens{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+  justify-content:center;
+}
+
+.screen{
+  background:#eef2ff;
+  padding:15px;
+  border-radius:12px;
+  width:180px;
+  transition:0.3s;
+}
+
+.screen:hover{
+  transform:scale(1.05);
+}
+
+.mock{
+  height:120px;
+  background:white;
+  border:1px solid #ccc;
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:12px;
+  color:#777;
+}
+
+button{
+  background:white;
+  color:#4338ca;
+  border:none;
+  padding:14px 28px;
+  border-radius:12px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.1);
+}
+
+.cta{
+  background:#4338ca;
+  color:white;
+}
+
+footer{
+  margin:40px 0;
+  color:#666;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">F</div>
+<h1>FocusFlow Study Planner</h1>
+<p>Plan smart • Study calm • Pass exams</p>
+</header>
+
+<section>
+<h2>What is FocusFlow?</h2>
+<p>
+FocusFlow is a simple study planner made for students.
+It helps organise homework, track exams, and study step by step
+so you feel calm and ready instead of stressed.
+</p>
+</section>
+
+<section>
+<h2>App Preview</h2>
+<div class="screens">
+
+<div class="screen">
+<div class="mock">Daily Planner Screen</div>
+<p>Plan study time clearly</p>
+</div>
+
+<div class="screen">
+<div class="mock">Homework Tracker</div>
+<p>Never miss deadlines</p>
+</div>
+
+<div class="screen">
+<div class="mock">Motivation Screen</div>
+<p>Stay encouraged daily</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>No more last-minute panic</h2>
+<p>
+Imagine walking into class confident.
+Imagine knowing your work is finished.
+FocusFlow helps you succeed one small step at a time.
+</p>
+</section>
+
+<section class="cta">
+<h2>Start your smart study life today</h2>
+<p>Join students choosing calm organised studying.</p>
+<br>
+<button>Get Started</button>
+</section>
+
+<footer>
+Created by Zak Matthews — School Project
+</footer>
+
+</body>
+</html>
+
